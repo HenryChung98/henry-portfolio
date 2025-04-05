@@ -10,6 +10,7 @@
 - [React Icons](https://react-icons.github.io/react-icons/)
 - [Emailjs(npm install @emailjs/browser)](https://www.emailjs.com/)
 - Particle.js(npm install @tsparticles/react, npm install @tsparticles/all)
+- highlight.js(npm install highlight.js): for creating code snippet
 
 ### Resources
 
