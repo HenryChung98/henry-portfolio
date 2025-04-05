@@ -59,7 +59,7 @@ function App() {
         /> */}
         <section
           id="banner"
-          className={`hidden md:block relative mb-2 md:right-1 z-10 bg-[#f0f4ff] rounded-lg shadow-xl p-5 w-full md:max-w-[750px] md:min-w-[300px] md:h-[550px] overflow-auto text-left ${
+          className={`hidden md:block relative mb-2 md:right-1 z-10 bg-[#F1F5F9] rounded-lg shadow-xl p-5 w-full md:max-w-[750px] md:min-w-[300px] md:h-[550px] overflow-auto text-left ${
             !isMobile && activeSection !== "banner" ? "md:hidden" : ""
           } ${!isMobile && "slide-in-left"}`}
         >

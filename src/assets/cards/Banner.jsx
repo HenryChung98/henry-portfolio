@@ -1,16 +1,17 @@
 export default function Banner() {
   return (
     <>
-      <h1 className="text-xl mb-4 text-indigo-500">welcome</h1>
-      {/* <img src="auctionBanner.webp" alt="" className="w-full h-auto"/> */}
-      <a
-        className="hidden md:block text-xl uppercase"
-        href="https://henry-chung-3d-portfolio.netlify.app/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        View 3D Portfolio
-      </a>
+      <div className="flex flex-col items-center justify-center h-[500px]">
+      
+        <a
+          className="text-3d uppercase"
+          href="https://henry-chung-3d-portfolio.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View 3D Portfolio
+        </a>
+      </div>
     </>
   );
 }

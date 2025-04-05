@@ -22,7 +22,7 @@ function SkillIcons({ iconPath, iconAlt }) {
 export default function SkillsCard() {
   return (
     <>
-      <h1 className="text-xl mb-4 text-indigo-600 border-b">
+      <h1 className="text-xl font-bold mb-4 text-indigo-600 border-b-2">
         Programing Languages
       </h1>
       <div className="flex flex-wrap items-center">
@@ -34,7 +34,7 @@ export default function SkillsCard() {
         <SkillIcons iconPath="Icons/ts-icon.webp" iconAlt="ts" />
         <SkillIcons iconPath="Icons/php-icon.webp" iconAlt="php" />
       </div>
-      <h1 className="text-xl mb-4 text-indigo-600 border-b">
+      <h1 className="text-xl font-bold mb-4 text-indigo-600 border-b-2">
         Libraries / Frameworks
       </h1>
       <div className="flex flex-wrap">
@@ -47,7 +47,7 @@ export default function SkillsCard() {
         <SkillIcons iconPath="Icons/socket-io-icon.webp" iconAlt="socket-io" />
       </div>
 
-      <h1 className="text-xl mb-4 text-indigo-600 border-b">Engines / etc</h1>
+      <h1 className="text-xl font-bold mb-4 text-indigo-600 border-b-2">Engines / etc</h1>
       <div className="flex flex-wrap">
         <SkillIcons
           iconPath="Icons/unreal-engine-icon.webp"

@@ -13,7 +13,7 @@ function NavButton({ icon, text, onClick, isActive }) {
     <li>
       <button
         onClick={onClick}
-        className={`md:rounded flex flex-col items-center justify-center md:border-b md:border-gray-700 w-[80px] h-[80px] bg-[#264D9B] duration-100 ${
+        className={`md:rounded flex flex-col items-center justify-center md:border-b md:border-gray-700 w-[80px] h-[80px] bg-[#334155] duration-100 ${
           isActive ? "text-[#5E81C5]" : "text-[#e0e0e0] hover:text-[#5E81C5]"
         }`}
       >

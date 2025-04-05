@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  background-color: #5e81c5;
-  color: #2f3f73;
+  background-color: #1e40af;
+  color: #334155;
   /* font-synthesis: none; */
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -11,6 +11,30 @@
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-style: normal;
+}
+h1 {
+  color: #0f172a;
+}
+
+.text-3d {
+  color: #4aa8e0;
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 
+    1px 1px 0px #0c7bab,
+    2px 2px 0px #0a6a92,
+    3px 3px 0px #085879;
+  transition: all 0.3s ease;
+}
+
+.text-3d:hover {
+  color: #b8e6ff;
+  text-shadow: 
+    0 0 5px #7dd3fc,
+    0 0 10px #7dd3fc,
+    0 0 15px #0ea5e9,
+    0 0 20px #0ea5e9;
+  transform: translateY(-2px);
 }
 
 #root {
@@ -33,7 +57,6 @@ body {
 button {
   cursor: pointer;
 }
-
 
 .slide-in-left {
   -webkit-animation: slide-in-left 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94)

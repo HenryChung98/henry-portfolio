@@ -11,7 +11,6 @@
 - [Emailjs(npm install @emailjs/browser)](https://www.emailjs.com/)
 - Particle.js(npm install @tsparticles/react, npm install @tsparticles/all)
 
-
 ### Resources
 
 - [icons](https://uxwing.com/)
@@ -20,3 +19,21 @@
 ### Deployment
 
 - [netlify](https://www.netlify.com/)
+
+### things to do
+
+##### banner
+
+- not sure
+
+##### about me
+
+- add contents
+- make it more readable
+
+##### blog
+
+- collapse for mobile
+- w-full md:w-1/2
+- blog list
+- blog detail(popup and overflow, close btn)

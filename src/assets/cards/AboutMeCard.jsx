@@ -3,7 +3,7 @@ import colors from "../components/colorManager";
 export default function AboutMeCard() {
   return (
     <>
-      <h1 className={`text-xl mb-4 text-[${colors.sectionTitle}] border-b`}>About Me</h1>
+      <h1 className={`text-xl font-bold mb-4 text-[${colors.sectionTitle}] border-b-2`}>About Me</h1>
       <p className="mb-4">
         Hello! I am currently pursuing Computing Science diploma at Douglas
         College, specializing in game development. I have developed several

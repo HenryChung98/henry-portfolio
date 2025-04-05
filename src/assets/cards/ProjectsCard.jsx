@@ -16,9 +16,9 @@ export default function ProjectsCard() {
 
   return (
     <>
-      <div className="border-b text-indigo-500 flex items-center justify-between">
+      <div className="border-b-2 font-bold text-[#0F172A] flex items-center justify-between">
         <h1 className="text-xl">Projects</h1>
-        <ul className="flex ml-4 text-indigo-500">
+        <ul className="flex ml-4">
           <li className="inline-block pr-4">
             <button
               className={`${isSelected == "game" && "opacity-50"} duration-100`}

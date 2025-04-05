@@ -1,11 +1,10 @@
 import { IoLogoGithub, IoLogoLinkedin, IoLogoInstagram } from "react-icons/io";
 import { MdOutlinePhoneIphone, MdEmail } from "react-icons/md";
-import colors from "../components/colorManager";
 
 function SocialBtn({ icon, link }) {
   return (
     <>
-      <li className="m-2 hover:text-indigo-300 duration-100">
+      <li className="m-2 hover:opacity-50 duration-100">
         <a href={link}>
           <span>{icon}</span>
         </a>
@@ -19,7 +18,7 @@ function ResumeBtn({ link, text }) {
     <>
       <a
         href={link}
-        className=" px-5 rounded hover:text-indigo-300 duration-100 uppercase font-semibold"
+        className=" px-5 rounded hover:opacity-50 duration-100 uppercase font-semibold"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -33,23 +32,23 @@ export default function MainCard() {
   return (
     <>
       <section
-        className={`bg-[${colors.mainCard}] rounded-lg shadow-xl relative z-20 flex flex-col justify-between items-center w-full md:w-[400px] mb-2 pb-5 h-[500px] md:h-[600px]`}
+        className={`bg-[#F1F5F9] rounded-lg shadow-xl relative z-20 flex flex-col justify-between items-center w-full md:w-[400px] mb-2 pb-5 h-[500px] md:h-[600px]`}
       >
         <img
-          src="Icons/ts-icon.webp"
+          src="maincard-background.webp"
           alt="background-image"
-          className="w-full h-1/2"
+          className="w-full h-1/2 rounded"
         />
         <img
-          src="Icons/js-icon.webp"
+          src="maincard-picture.webp"
           alt="profile-image"
           className="relative bottom-10 rounded-full w-30 h-30"
         />
         <div className="flex flex-col space-y-1 relative bottom-5">
           <h1 className="text-xl uppercase font-bold">Henry Chung</h1>
-          <h3 className="text-sm uppercase font-semibold">
+          <h2 className="text-sm uppercase font-semibold">
             Game developer / Web developer
-          </h3>
+          </h2>
           <ul className="flex flex-row justify-center items-center">
             <SocialBtn
               link="https://github.com/HenryChung98"

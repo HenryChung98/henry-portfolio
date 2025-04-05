@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import colors from "../components/colorManager";
 
 const SectionScrollButton = ({ containerRef }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -62,9 +61,7 @@ export default function SectionContainer({
     <section
       ref={sectionRef}
       id={id}
-      className={`relative mb-2 md:right-1 z-10 bg-[${
-        colors.card
-      }] rounded-lg shadow-xl p-5 w-full md:max-w-[750px] md:min-w-[300px] md:h-[550px] overflow-auto text-left ${
+      className={`relative mb-2 md:right-1 z-10 bg-[#F1F5F9] rounded-lg shadow-xl p-5 w-full md:max-w-[750px] md:min-w-[300px] md:h-[550px] overflow-auto text-left ${
         !isMobile && activeSection !== id ? "hidden" : ""
       } ${!isMobile && "slide-in-left"}`}
     >
