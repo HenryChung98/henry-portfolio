@@ -3,7 +3,8 @@ import { useState } from "react";
 function SkillIcons({ iconPath, iconAlt }) {
   const [rotateDegree, setRotateDegree] = useState("");
   const handleHover = () => {
-    setRotateDegree(Math.random() > 0.5 ? "-" : "");
+    const randomRotate = Math.random() > 0.5 ? "hover:-rotate-45" : "hover:rotate-45";
+    setRotateDegree(randomRotate);
   };
 
   return (
@@ -12,7 +13,7 @@ function SkillIcons({ iconPath, iconAlt }) {
         src={iconPath}
         alt={iconAlt}
         onMouseEnter={handleHover}
-        className={`w-1/3 md:w-1/5 p-3 md:p-6 hover:${rotateDegree}rotate-45 hover:scale-105 hover:drop-shadow-lg transition-transform duration-300`}
+        className={`w-1/3 md:w-1/5 p-3 md:p-6 ${rotateDegree} hover:drop-shadow-lg transition-transform duration-300`}
       />
     </>
   );
