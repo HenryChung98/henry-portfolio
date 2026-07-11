@@ -2,6 +2,9 @@
 // Icon size: 72px
 // tanstack, drizzle, antigravity are not 72px
 import SectionTitle from "../components/section-title.astro";
+import { getTranslations } from "../i18n";
+
+const t = getTranslations(Astro.currentLocale);
 const iconModules = import.meta.glob<{ default: ImageMetadata }>('../assets/icons/**/*.webp', { eager: true });
 
 
@@ -49,15 +52,15 @@ const skills = {
 };
 
 const sections = [
-  { title: "Languages", items: skills.languages },
-  { title: "Frontend", items: skills.frontend },
-  { title: "Backend & Database", items: skills.backend },
-  { title: "Cloud & DevOps", items: skills.devops },
-  { title: "Other Tools", items: skills.other },
+  { title: t.skills.categories.languages, items: skills.languages },
+  { title: t.skills.categories.frontend, items: skills.frontend },
+  { title: t.skills.categories.backend, items: skills.backend },
+  { title: t.skills.categories.devops, items: skills.devops },
+  { title: t.skills.categories.other, items: skills.other },
 ];
 ---
 
-<SectionTitle title="Skills" />
+<SectionTitle title={t.skills.title} />
 {sections.map((section) => (
  <div>
   <SectionTitle title={section.title} variant="secondary" />

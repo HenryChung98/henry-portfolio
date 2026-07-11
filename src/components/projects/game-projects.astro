@@ -1,5 +1,8 @@
 ---
 import ProjectContainer from "./project-container.astro";
+import { getTranslations } from "../../i18n";
+
+const t = getTranslations(Astro.currentLocale);
 
 const iconModules = import.meta.glob<{ default: ImageMetadata }>('../../assets/icons/**/*.webp', { eager: true });
 const bannerModules = import.meta.glob<{ default: ImageMetadata }>('../../assets/project-banners/game/**/*.webp', { eager: true });
@@ -19,15 +22,11 @@ const getBannerPath = (path: string) => {
 <ProjectContainer
   imgPath={getBannerPath("poker-banner.webp")}
   imgAlt="Poker game prototype with AI opponents for Software Engineering course team project"
-  title="Texas Hold'em Poker Prototype (Role: Lead Engineer)"
+  title={t.projects.game.poker.title}
   skillIcons={[getIconPath("other/unity-game-engine-icon.webp"), getIconPath("language/csharp-icon.webp")]}
   skillIconAlts={["Unity Engine", "C#"]}
-  subTitle="Poker game prototype with AI opponents for Software Engineering course team project"
-  desc={[
-    "Managed 4-person team using Agile, established coding standards and Git workflow to reduce merge conflicts",
-    "Built core game systems for turn validation, betting, and deck management",
-    "Designed interactive UI with animations and audio for enhanced engagement",
-  ]}
+  subTitle={t.projects.game.poker.subTitle}
+  desc={t.projects.game.poker.desc}
   resourceLink="https://github.com/HenryChung98/CMPT2276-POKER2"
   moveLink="https://9henrychung8.itch.io/prototype-texas-holdem-poker"
   accessMethod="playNow"
@@ -37,14 +36,11 @@ const getBannerPath = (path: string) => {
 <ProjectContainer
   imgPath={getBannerPath("game-jam-banner.webp")}
   imgAlt="Themed Bubble at the Vancouver Global Game Jam, featuring ability acquisition through interacting with speech bubbles"
-  title="Speech Bubble Game (Role: Programmer)"
+  title={t.projects.game.speechBubble.title}
   skillIcons={[getIconPath("other/unity-game-engine-icon.webp"), getIconPath("language/csharp-icon.webp")]}
   skillIconAlts={["Unity Engine", "C#"]}
-  subTitle="Themed Bubble at the Vancouver Global Game Jam, featuring ability acquisition through interacting with speech bubbles"
-  desc={[
-    "Implemented character movement and collision handling",
-    "Implemented actions that vary based on the acquired ability",
-  ]}
+  subTitle={t.projects.game.speechBubble.subTitle}
+  desc={t.projects.game.speechBubble.desc}
   resourceLink="https://github.com/mugwhump/GGJ2025-Paperless"
   team
 />
@@ -52,29 +48,21 @@ const getBannerPath = (path: string) => {
 <ProjectContainer
   imgPath={getBannerPath("vr-game-banner.webp")}
   imgAlt="VR shooter playable on Meta Quest Link"
-  title="VR Shooter Game"
+  title={t.projects.game.vrShooter.title}
   skillIcons={[getIconPath("other/unreal-engine-icon.webp")]}
   skillIconAlts={["Unreal Engine"]}
-  subTitle="VR shooter playable on Meta Quest Link"
-  desc={[
-    "Created intense shooting action with responsive controls using Niagara", 
-    "Implemented dynamic hand animations", 
-    "Implemented recall functionality for grabbable objects"
-  ]}
+  subTitle={t.projects.game.vrShooter.subTitle}
+  desc={t.projects.game.vrShooter.desc}
 />
 
 <ProjectContainer
   imgPath={getBannerPath("infinite-scroll-banner.webp")}
   imgAlt="Screen-spinning twists and obstacle dodging, featuring challenging obstacles with increasing difficulty"
-  title="Infinite Scroll Game"
+  title={t.projects.game.infiniteScroll.title}
   skillIcons={[getIconPath("other/unity-game-engine-icon.webp"), getIconPath("language/csharp-icon.webp")]}
   skillIconAlts={["Unity Engine", "C#"]}
-  subTitle="Screen-spinning twists and obstacle dodging, featuring challenging obstacles with increasing difficulty"
-  desc={[
-    "Organized obstacles and score objects into distinct classes for proper collision handling",
-    "Implemented context-based animation system",
-    "Added dynamic screen-spinning and rotation mechanics",
-  ]}
+  subTitle={t.projects.game.infiniteScroll.subTitle}
+  desc={t.projects.game.infiniteScroll.desc}
   resourceLink="https://github.com/HenryChung98/RotationRush"
   moveLink="https://9henrychung8.itch.io/rotation-rush"
   accessMethod="playNow"
@@ -83,20 +71,17 @@ const getBannerPath = (path: string) => {
 <ProjectContainer
   imgPath={getBannerPath("mouse-accuracy-banner.webp")}
   imgAlt="Focused on precision shooting and reaction time, a real-time interactive game built with SDL2"
-  title="Mouse Accuracy Training"
+  title={t.projects.game.mouseAccuracy.title}
   skillIcons={[getIconPath("language/cpp-icon.webp")]}
   skillIconAlts={["C++"]}
-  subTitle="Focused on precision shooting and reaction time, a real-time interactive game built with SDL2"
-  desc={[ 
-    "Built state-based gameplay with multiple modes, scoring, and dynamic visuals",
-    "Integrated audio and text rendering",
-  ]}
+  subTitle={t.projects.game.mouseAccuracy.subTitle}
+  desc={t.projects.game.mouseAccuracy.desc}
   resourceLink="https://github.com/HenryChung98/mouse-accuracy-training"
 />
 
 <ProjectContainer
   imgPath={getBannerPath("liar-game-banner.webp")}
-  title="Liar Game"
+  title={t.projects.game.liarGame.title}
   imgAlt="Liar game application developed by JavaScript"
   skillIcons={[
     getIconPath("language/javascript-icon.webp"),
@@ -104,11 +89,8 @@ const getBannerPath = (path: string) => {
   skillIconAlts={[
     "JavaScript",
   ]}
-  subTitle="Liar game application developed by JavaScript"
-  desc={[
-    "Designed a state-based game flow including setup, role reveal, and timed discussions",
-    "Built a mobile-friendly role reveal flow ensuring fair gameplay",
-  ]}
+  subTitle={t.projects.game.liarGame.subTitle}
+  desc={t.projects.game.liarGame.desc}
   resourceLink="https://github.com/HenryChung98/liar-game"
   moveLink="https://henrychung98.github.io/liar-game/"
   accessMethod="playNow"

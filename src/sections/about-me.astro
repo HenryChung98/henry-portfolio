@@ -4,62 +4,49 @@ import AWSCertAI from "../assets/icons/certificate/aws-certified-ai-practitioner
 import AWSCertCloud from "../assets/icons/certificate/aws-certified-cloud-practitioner.webp";
 import AWSCertCloudOps from "../assets/icons/certificate/aws-certified-cloudops-engineer-associate.webp";
 import AWSCertSecurity from "../assets/icons/certificate/aws-certified-security-specialty.webp";
-import { EXPERIENCES } from "../consts";
+import { getTranslations } from "../i18n";
 
+const t = getTranslations(Astro.currentLocale);
+
+// dates are localized in src/i18n (t.about.certDates, same order)
 const certifications = [
   {
     iconPath: AWSCertSecurity.src,
     iconAlt: "aws-certified-security-specialty",
-    issueDate: "May 2026",
-    expiryDate: "Expires May 2029"
   },
   {
     iconPath: AWSCertCloudOps.src,
     iconAlt: "aws-certified-cloudops-engineer-associate",
-    issueDate: "April 2026",
-    expiryDate: "Expires April 2029"
   },
   {
     iconPath: AWSCertAI.src,
     iconAlt: "aws-certified-ai-practitioner",
-    issueDate: "July 2025",
-    expiryDate: "Expires July 2028"
   },
   {
     iconPath: AWSCertCloud.src,
     iconAlt: "aws-certified-cloud-practitioner",
-    issueDate: "June 2025",
-    expiryDate: "Expires June 2028"
   }
 ];
 ---
 
 <article class="mb-16">
-  <SectionTitle title="About Me" />
-  <SectionTitle title="Summary" variant="secondary" />
+  <SectionTitle title={t.about.title} />
+  <SectionTitle title={t.about.summary} variant="secondary" />
 
-  <p class="mb-4 text-foreground/80">
-    Software Engineer specializing in TypeScript, Next.js, and PostgreSQL. 
-  </p>
-  <p class="mb-4 text-foreground/80">
-    Experienced in designing role-based access control systems 
-    and multi-entity relational data models, building analytics dashboards, and developing backend systems with Drizzle ORM
-    and optimized API design for analytics and workflow applications.
-  </p>
-  <p class="mb-4 text-foreground/80">
-    Also have hands-on experience in game development using Unreal Engine and Unity with C#.
-  </p>
+  {t.about.paragraphs.map((paragraph) => (
+    <p class="mb-4 text-foreground/80">{paragraph}</p>
+  ))}
   <!-- Through team-based projects, I contributed to implementing game
     mechanics and user interfaces while applying software engineering principles such as clear
     architecture, high cohesion, low coupling, and continuous refactoring -->
 </article>
 
 <article class="mb-16">
-  <SectionTitle title="Work Experience" variant="secondary" />
+  <SectionTitle title={t.about.workExperience} variant="secondary" />
   <div class="relative border-l-2 border-primary/30 pl-8 space-y-8">
     <!-- TODO: when theme is changed, manually change the color -->
     <span class="absolute left-[-2px] top-0 h-[5px] w-[2px] bg-background z-10" />
-    {EXPERIENCES.map((exp) => (
+    {t.about.experiences.map((exp) => (
       <div class="relative">
         <div class="absolute -left-[41px] top-[5px] w-4 h-4 bg-primary rounded-full"></div>
         <h3 class="text-lg font-semibold text-secondary-foreground mb-1">{exp.title}</h3>
@@ -84,9 +71,9 @@ const certifications = [
 
 
 <article class="mb-16">
-  <SectionTitle title="Certifications" variant="secondary" />
+  <SectionTitle title={t.about.certifications} variant="secondary" />
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-  {certifications.map((cert) => (
+  {certifications.map((cert, index) => (
     <div class="border-l-4 border-primary p-6 flex items-center gap-6 transition-colors">
       <img
         src={cert.iconPath}
@@ -94,8 +81,8 @@ const certifications = [
         class="w-20 md:w-24"
       />
       <div class="flex-1">
-        <p class="text-sm text-foreground/80 font-medium mb-1">{cert.issueDate}</p>
-        <p class="text-sm text-muted-foreground">{cert.expiryDate}</p>
+        <p class="text-sm text-foreground/80 font-medium mb-1">{t.about.certDates[index].issueDate}</p>
+        <p class="text-sm text-muted-foreground">{t.about.certDates[index].expiryDate}</p>
       </div>
     </div>
   ))}

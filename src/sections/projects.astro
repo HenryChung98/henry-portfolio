@@ -2,14 +2,17 @@
 import SectionTitle from "../components/section-title.astro";
 import WebProjects from "../components/projects/web-projects.astro";
 import GameProjects from "../components/projects/game-projects.astro";
+import { getTranslations } from "../i18n";
+
+const t = getTranslations(Astro.currentLocale);
 
 const tabs = [
-  { id: 'web', label: 'Web' },
-  { id: 'game', label: 'Game' },
+  { id: 'web', label: t.projects.tabs.web },
+  { id: 'game', label: t.projects.tabs.game },
 ];
 ---
 
-<SectionTitle title="Projects" />
+<SectionTitle title={t.projects.title} />
   <ul class="flex justify-center gap-4 mb-6 md:mb-12">
     {tabs.map((tab) => (
       <li class="inline-block w-20 text-center">

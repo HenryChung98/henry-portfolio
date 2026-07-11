@@ -1,5 +1,8 @@
 ---
 import SectionTitle from "../components/section-title.astro";
+import { getTranslations } from "../i18n";
+
+const t = getTranslations(Astro.currentLocale);
 
 interface Post {
   url: string;
@@ -13,10 +16,10 @@ const response = await fetch("https://henrychung98.github.io/blog/api/recent-pos
 const recentPosts: Post[] = await response.json();
 ---
 
-<SectionTitle title="Blog" />
+<SectionTitle title={t.blog.title} />
 
   <!-- Recent label -->
-  <p class="text-sm font-semibold mb-3">Recent Posts</p>
+  <p class="text-sm font-semibold mb-3">{t.blog.recentPosts}</p>
 
   <!-- Grid -->
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -34,7 +37,7 @@ const recentPosts: Post[] = await response.json();
         <p class="mb-4 text-sm leading-relaxed text-foreground/80">{post.description}</p>
         <div class="flex items-center gap-2">
           <time class="text-xs text-muted-foreground">
-            {new Date(post.pubDate).toLocaleDateString("en-US", {
+            {new Date(post.pubDate).toLocaleDateString(t.blog.dateLocale, {
               year: "numeric",
               month: "short",
               day: "numeric",

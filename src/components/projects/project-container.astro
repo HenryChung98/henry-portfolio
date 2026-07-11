@@ -1,4 +1,8 @@
 ---
+import { getTranslations } from "../../i18n";
+
+const t = getTranslations(Astro.currentLocale);
+
 interface Props {
   // imgRatio: 'square' | 'landscape' | 'portrait';
   imgPath: string;
@@ -35,18 +39,13 @@ const imgSizeClasses = {
   portrait: 'max-w-[280px] md:max-w-[380px] aspect-[2/3]',
 };
 
-const accessMethodText = {
-  download: 'Download',
-  playNow: 'Play Now',
-  website: 'View Live',
-  '': '', // Handle empty accessMethod
-};
+const accessMethodText = t.projects.access;
 ---
 
 <article class="border-l-4 mb-16 border-primary p-2 flex flex-col md:flex-row justify-around w-full md:gap-16">
     <div class="w-full relative inline-block group ">
       <div class={`absolute -top-7 left-1 px-3 py-1 rounded-t-xl text-sm border-t-2 border-l-2 border-r-2 border-primary/50 ${team ? 'bg-primary text-primary-foreground' : 'text-primary'}`}>
-        {team ? 'Team' : 'Solo'}
+        {team ? t.projects.team : t.projects.solo}
       </div>
       <img
         src={`${imgPath}`}
@@ -81,7 +80,7 @@ const accessMethodText = {
             rel="noopener noreferrer"
             class="hover:text-primary/30 duration-200"
           >
-            Resource
+            {t.projects.resource}
           </a>
         </li>
       )}

@@ -1,6 +1,10 @@
 ---
 import MainPicture from "../assets/maincard-picture.webp";
 import { PROFILE, NAV_ITEMS } from "../consts";
+import { getTranslations } from "../i18n";
+import LanguageSwitcher from "../components/language-switcher.astro";
+
+const t = getTranslations(Astro.currentLocale);
 
 const socialLinks = [
   { 
@@ -35,16 +39,19 @@ const socialLinks = [
 ---
 <section id="home" class="md:sticky top-0 mt-24 md:mt-0 h-fit md:h-screen text-card-foreground bg-primary/20 rounded-xl md:rounded-none m-4 md:m-0 md:overflow-y-auto">
     <div class="flex flex-col gap-5 p-5">
-        <img src={MainPicture.src} alt="main-picture" class="w-30 h-30 rounded-3xl mb-4" />
+        <div class="flex items-start justify-between">
+            <img src={MainPicture.src} alt="main-picture" class="w-30 h-30 rounded-3xl mb-4" />
+            <LanguageSwitcher />
+        </div>
         <div>
-            <p class="text-xl text-foreground font-bold mb-2">Henry Chung</p>
-            <p class="text-sm text-foreground/80 mb-2">Software Engineer</p>
-            <p class="text-xs text-foreground/80 mb-5">Specializing in full-stack development</p>
+            <p class="text-xl text-foreground font-bold mb-2">{t.meta.name}</p>
+            <p class="text-sm text-foreground/80 mb-2">{t.main.role}</p>
+            <p class="text-xs text-foreground/80 mb-5">{t.main.tagline}</p>
             <div class="flex items-center gap-2 mb-2 text-muted-foreground">
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                 </svg>
-                <span class="text-xs">{PROFILE.location}</span>
+                <span class="text-xs">{t.main.location}</span>
             </div>
             <a 
               href={`mailto:${PROFILE.email}`} 
@@ -58,7 +65,7 @@ const socialLinks = [
               <span class="text-xs">{PROFILE.email}</span>
               {PROFILE.isOpened && (
                 <span class="absolute -bottom-6 bg-primary text-primary-foreground text-xs px-2 py-1 rounded opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">
-                    open to freelance or full-time work
+                    {t.main.openTo}
                 </span>
               )}
             </a>
@@ -70,7 +77,7 @@ const socialLinks = [
             rel="noopener noreferrer"
             class="w-full inline-flex justify-center border-2 rounded-full text-primary hover:bg-primary/10 transition-colors"
         >
-        Resume
+        {t.main.resume}
         </a>
         <!-- social links -->
         <div class="flex justify-center gap-3 m-3">
@@ -103,7 +110,7 @@ const socialLinks = [
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                                 <path d={item.icon} />
                             </svg>
-                            <span>{item.text}</span>
+                            <span>{t.nav[item.id as keyof typeof t.nav]}</span>
                         </a>
                     </li>
                 ))}

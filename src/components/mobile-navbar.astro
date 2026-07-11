@@ -1,5 +1,8 @@
 ---
 import { NAV_ITEMS } from "../consts";
+import { getTranslations } from "../i18n";
+
+const t = getTranslations(Astro.currentLocale);
 ---
 
 <header id="navbar" class="md:hidden fixed top-0 z-50 transition-transform duration-300 w-full">
@@ -11,7 +14,7 @@ import { NAV_ITEMS } from "../consts";
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
               <path d={item.icon} />
             </svg>
-            <span class="text-xs uppercase p-1">{item.text}</span>
+            <span class="text-xs uppercase p-1">{t.nav[item.id as keyof typeof t.nav]}</span>
           </a>
         </li>
       ))}

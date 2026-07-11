@@ -1,5 +1,8 @@
 ---
 import ProjectContainer from "./project-container.astro";
+import { getTranslations } from "../../i18n";
+
+const t = getTranslations(Astro.currentLocale);
 
 const iconModules = import.meta.glob<{ default: ImageMetadata }>('../../assets/icons/**/*.webp', { eager: true });
 const bannerModules = import.meta.glob<{ default: ImageMetadata }>('../../assets/project-banners/web/**/*.webp', { eager: true });
@@ -17,7 +20,7 @@ const getBannerPath = (path: string) => {
 
 <ProjectContainer
   imgPath={getBannerPath("crm-application.webp")}
-  title="CRM Web Application"
+  title={t.projects.web.crm.title}
   imgAlt="Internal CRM Web Application with member management"
   skillIcons={[
     getIconPath("frontend/nextjs-icon.webp"),
@@ -33,12 +36,8 @@ const getBannerPath = (path: string) => {
     "typescript",
     "tailwind",
   ]}
-  subTitle="Internal CRM Web Application with member management"
-  desc={[
-    "Developed a drag-and-drop Kanban pipeline, FullCalendar-based scheduling, and inline-editable data table",
-    "Built a CRM analytics dashboard including KPIs, pipeline values, deal metrics, and revenue trends",
-    "Implemented optimistic updates with Tanstack Query to provide instant feedback",
-  ]}
+  subTitle={t.projects.web.crm.subTitle}
+  desc={t.projects.web.crm.desc}
   resourceLink="https://henrychung98.github.io/blog/posts/010-crm-web-app-project/"
   moveLink="https://hc-crm-mvp.vercel.app/"
   accessMethod="website"
@@ -46,7 +45,7 @@ const getBannerPath = (path: string) => {
 
 <ProjectContainer
   imgPath={getBannerPath("cover-letter-filler-banner.webp")}
-  title="Cover Letter Filler"
+  title={t.projects.web.coverLetterFiller.title}
   imgAlt="Cover letter template filler with dynamic placeholder replacement"
   skillIcons={[
     getIconPath("devops/oracle-icon.webp"),
@@ -62,19 +61,15 @@ const getBannerPath = (path: string) => {
     "TypeScript",
     "Tailwind CSS",
   ]}
-  subTitle="Word template editor with dynamic placeholder replacement"
-  desc={[
-    "Developed square bracket-based keyword extraction and automated paragraph detection",
-    "Enabled editing of paragraph content",
-    "Implemented PDF export using Gotenberg (Docker-based conversion)",
-  ]}
+  subTitle={t.projects.web.coverLetterFiller.subTitle}
+  desc={t.projects.web.coverLetterFiller.desc}
   resourceLink="https://henrychung98.github.io/blog/posts/009-cover-letter-filler-project/"
   moveLink="https://cover-letter-filler.vercel.app/"
   accessMethod="website"
 />
 <ProjectContainer
   imgPath={getBannerPath("auction-banner.webp")}
-  title="Auction Website(Role: Backend)"
+  title={t.projects.web.auction.title}
   imgAlt="Competitive bidding platform built for Full-Stack Development course team project"
   skillIcons={[
     getIconPath("frontend/nextjs-icon.webp"),
@@ -86,12 +81,8 @@ const getBannerPath = (path: string) => {
     "MongoDB",
     "JavaScript",
   ]}
-  subTitle="Competitive bidding platform built for Full-Stack Development course team project"
-  desc={[
-    "Developed backend with NoSQL for full CRUD operations",
-    "Handled bid logic to update ownership to the latest bidder",
-    "Implemented admin-only accounts for management",
-  ]}
+  subTitle={t.projects.web.auction.subTitle}
+  desc={t.projects.web.auction.desc}
   resourceLink="https://github.com/timdonato/csis3380-final"
   moveLink="https://csis3380-final.netlify.app/"
   accessMethod="website"
