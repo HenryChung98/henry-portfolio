@@ -31,7 +31,7 @@ export const en = {
     experiences: [
       {
         title: "Software Developer (Volunteer)",
-        period: "Feb 2026 - Present",
+        period: "Feb 2026 - Jun 2026",
         company: "Evernorth Foundation",
         projects: [
           {

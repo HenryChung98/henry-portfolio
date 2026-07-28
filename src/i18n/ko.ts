@@ -33,7 +33,7 @@ export const ko: Translations = {
     experiences: [
       {
         title: "소프트웨어 개발자 (자원봉사)",
-        period: "2026년 2월 - 현재",
+        period: "2026년 2월 - 2026년 6월",
         company: "Evernorth Foundation",
         projects: [
           {
@@ -118,11 +118,9 @@ export const ko: Translations = {
       },
       speechBubble: {
         title: "말풍선 게임 (역할: 프로그래머)",
-        subTitle: "밴쿠버 Global Game Jam의 'Bubble' 테마 출품작으로, 말풍선과 상호작용해 능력을 획득하는 게임",
-        desc: [
-          "캐릭터 이동 및 충돌 처리 구현",
-          "획득한 능력에 따라 달라지는 액션 구현",
-        ],
+        subTitle:
+          "밴쿠버 Global Game Jam의 'Bubble' 테마 출품작으로, 말풍선과 상호작용해 능력을 획득하는 게임",
+        desc: ["캐릭터 이동 및 충돌 처리 구현", "획득한 능력에 따라 달라지는 액션 구현"],
       },
       vrShooter: {
         title: "VR 슈팅 게임",
